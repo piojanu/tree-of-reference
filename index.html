@@ -1,12 +1,70 @@
 <html>
   <body>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.6.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.css" rel="stylesheet" />
+    <script>
+        mermaid.initialize({
+            startOnLoad:true,
+            securityLevel: 'loose',
+            theme: "default"
+        });
+    </script>
     <h1>Tree of reference</h1>
+    <h2>Bayesian Exploration</h2>
+    <div class="mermaid">
+      graph TD
+        %% Papers
+
+        SUEU("Successor Uncertainties: Exploration and Uncertainty<br>in Temporal Difference Learning (Janz D., 2019)")
+        click SUEU "onenote:https://d.docs.live.net/c1f3e1f15554558d/Documents/📥%20Drafts/📬%20Inbox.one#Successor%20Uncertainties%20Exploration%20and%20Uncertainty%20in%20Temporal%20Difference%20Learning&section-id={5108ACD6-EB42-2848-9CB2-DC70FDABBDD1}&page-id={F1E88E0D-016E-6F44-AB65-8147BB73326A}&end"
+
+        UBE("The Uncertainty Bellman Equation<br>and Exploration (O'Donoghue B., 2018)")
+        click UBE "https://arxiv.org/abs/1709.05380"
+
+        RPF("Randomized Prior Functions<br>for Deep Reinforcement Learning (Osband I., 2018)")
+        click RPF "onenote:https://d.docs.live.net/c1f3e1f15554558d/Documents/%F0%9F%93%A5%20Drafts/%F0%9F%93%AC%20Inbox.one%23%EF%BB%BFRandomized%20Prior%20Functions%20for%20Deep%20Reinforcement%20Learning&section-id=%7B5108ACD6-EB42-2848-9CB2-DC70FDABBDD1%7D&page-id=%7B2AD20905-3075-D243-9E94-4EE878F23526%7D&end"
+
+        BDQN("Deep Exploration<br>via Bootstrapped DQN (Osband I., 2016)")
+        click BDQN "https://arxiv.org/abs/1602.04621"
+
+        GERVF("Generalization and Exploration<br>via Randomized Value Functions (Osband I., 2014)")
+        click GERVF "https://arxiv.org/abs/1402.0635"
+
+        MERL("(More) Efficient Reinforcement Learning<br>via Posterior Sampling (Osband I., 2013)")
+        click MERL "https://arxiv.org/abs/1306.0940"
+
+        subgraph RL w/o uncertainty consideration failure modes
+          RSRL("Risk-Sensitive Reinforcement Learning<br>(Mihatsch O., 2002)")
+          click RSRL "https://link.springer.com/content/pdf/10.1023/A:1017940631555.pdf"
+          RVF("Deep Exploration<br>via Randomized Value Functions (Osband I., 2017)")
+        end
+
+        %% References
+
+        RPF --> RSRL
+        RPF --> RVF
+
+        SUEU --> RPF --> BDQN --> GERVF --> MERL
+        SUEU -- proves wrong --> UBE
+
+        %% Style
+
+        classDef Unread fill:#e3e8e4,stroke:#6b6b61
+        class UBE,RSRL,RVF,BDQN,GERVF,MERL Unread
+    </div>
+    <h2>Deliberate Practice based on reading</h2>
     <div class="mermaid">
       graph LR
-        Div["Diversity is All You Need:<br>Learning Skills Without a Reward Function"]
-        click Div "https://arxiv.org/abs/1802.06070"
+        %% Papers
+        Div("Diversity is All You Need:<br>Learning Skills Without a Reward Function")
+        click Div "onenote:https://d.docs.live.net/c1f3e1f15554558d/Documents/📥%20Drafts/Deliberate%20Practice%20based%20on%20reading.one#Diversity%20is%20All%20You%20Need%20-%20theory%20derivation&section-id={EA22C588-7AEC-2C4C-B458-59F46F167AD1}&page-id={AE0B0E15-CD2E-CA42-8B36-22CE59737396}&end"
     </div>
+    <!--
+      graph LR
+        A[Square Rect] -- Link text --#> B((Circle))
+        A --#> C(Round Rect)
+        B --#> D{Rhombus}
+        C --#> D
+    -->
   </body>
 </html>
