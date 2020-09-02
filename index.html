@@ -15,8 +15,11 @@
       graph TD
         %% Papers
 
+        SUN("SUNRISE: A Simple Unified Framework for Ensemble Learning<br>in Deep Reinforcement Learning (Lee K., 2020)")
+        click SUN "onenote:https://d.docs.live.net/c1f3e1f15554558d/Documents/📥%20Drafts/Bayesian%20exploration%20in%20RL.one#SUNRISE%20A%20Simple%20Unified%20Framework%20for%20Ensemble%20Learning%20in%20Deep&section-id={0109C44C-D51D-9446-BE23-6C76ECEE15D1}&page-id={193C7BD2-4BF8-4544-ADFF-5BE5241E92EA}&end"
+
         SUEU("Successor Uncertainties: Exploration and Uncertainty<br>in Temporal Difference Learning (Janz D., 2019)")
-        click SUEU "onenote:https://d.docs.live.net/c1f3e1f15554558d/Documents/📥%20Drafts/📬%20Inbox.one#Successor%20Uncertainties%20Exploration%20and%20Uncertainty%20in%20Temporal%20Difference%20Learning&section-id={5108ACD6-EB42-2848-9CB2-DC70FDABBDD1}&page-id={F1E88E0D-016E-6F44-AB65-8147BB73326A}&end"
+        click SUEU "onenote:https://d.docs.live.net/c1f3e1f15554558d/Documents/📥%20Drafts/Bayesian%20exploration%20in%20RL.one#Successor%20Uncertainties%20Exploration%20and%20Uncertainty%0bin%20Temporal%20Difference%20Learning&section-id={0109C44C-D51D-9446-BE23-6C76ECEE15D1}&page-id={3F3844C8-6AD5-2044-8711-E2AF31F8156C}&end"
 
         UBE("The Uncertainty Bellman Equation<br>and Exploration (O'Donoghue B., 2018)")
         click UBE "https://arxiv.org/abs/1709.05380"
@@ -40,6 +43,8 @@
         end
 
         %% References
+
+        SUN -- "builds on top<br>with add-ons" --> BDQN
 
         RPF --> RSRL
         RPF --> RVF
