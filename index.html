@@ -12,7 +12,7 @@
     <h1>Tree of reference</h1>
     <h2>Bayesian Exploration</h2>
     <div class="mermaid">
-      graph TD
+      graph LR
         %% Papers
 
         SUN("SUNRISE: A Simple Unified Framework for Ensemble Learning<br>in Deep Reinforcement Learning (Lee K., 2020)")
@@ -29,6 +29,9 @@
 
         BDQN("Deep Exploration<br>via Bootstrapped DQN (Osband I., 2016)")
         click BDQN "./refs/Summary_of_Deep_Exploration_via_Bootstrapped_DQN.jpg"
+
+        BTS("Bootstrapped thompson sampling<br>and deep exploration (Osband I., 2015)")
+        click BTS "https://arxiv.org/abs/1507.00300"
 
         RLSVI("Generalization and Exploration<br>via Randomized Value Functions (Osband I., 2014)")
         click RLSVI "https://arxiv.org/abs/1402.0635"
@@ -52,13 +55,14 @@
         SUEU --> RPF --> BDQN
         BDQN -- extends --> RLSVI
         BDQN -- adopts --> PSRL
+        BDQN -- could use<br>priors from --> BTS
         RLSVI --> PSRL
         SUEU -- proves wrong --> UBE
 
         %% Style
 
         classDef Unread fill:#e3e8e4,stroke:#6b6b61
-        class UBE,RSRL,RVF,RLSVI,PSRL Unread
+        class UBE,RSRL,RVF,RLSVI,PSRL,BTS Unread
     </div>
     <h2>Deliberate Practice based on reading</h2>
     <div class="mermaid">
