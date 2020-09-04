@@ -28,13 +28,13 @@
         click RPF "onenote:https://d.docs.live.net/c1f3e1f15554558d/Documents/%F0%9F%93%A5%20Drafts/%F0%9F%93%AC%20Inbox.one%23%EF%BB%BFRandomized%20Prior%20Functions%20for%20Deep%20Reinforcement%20Learning&section-id=%7B5108ACD6-EB42-2848-9CB2-DC70FDABBDD1%7D&page-id=%7B2AD20905-3075-D243-9E94-4EE878F23526%7D&end"
 
         BDQN("Deep Exploration<br>via Bootstrapped DQN (Osband I., 2016)")
-        click BDQN "https://arxiv.org/abs/1602.04621"
+        click BDQN "./refs/Summary_of_Deep_Exploration_via_Bootstrapped_DQN.jpg"
 
-        GERVF("Generalization and Exploration<br>via Randomized Value Functions (Osband I., 2014)")
-        click GERVF "https://arxiv.org/abs/1402.0635"
+        RLSVI("Generalization and Exploration<br>via Randomized Value Functions (Osband I., 2014)")
+        click RLSVI "https://arxiv.org/abs/1402.0635"
 
-        MERL("(More) Efficient Reinforcement Learning<br>via Posterior Sampling (Osband I., 2013)")
-        click MERL "https://arxiv.org/abs/1306.0940"
+        PSRL("(More) Efficient Reinforcement Learning<br>via Posterior Sampling (Osband I., 2013)")
+        click PSRL "https://arxiv.org/abs/1306.0940"
 
         subgraph RL w/o uncertainty consideration failure modes
           RSRL("Risk-Sensitive Reinforcement Learning<br>(Mihatsch O., 2002)")
@@ -49,13 +49,16 @@
         RPF --> RSRL
         RPF --> RVF
 
-        SUEU --> RPF --> BDQN --> GERVF --> MERL
+        SUEU --> RPF --> BDQN
+        BDQN -- extends --> RLSVI
+        BDQN -- adopts --> PSRL
+        RLSVI --> PSRL
         SUEU -- proves wrong --> UBE
 
         %% Style
 
         classDef Unread fill:#e3e8e4,stroke:#6b6b61
-        class UBE,RSRL,RVF,BDQN,GERVF,MERL Unread
+        class UBE,RSRL,RVF,RLSVI,PSRL Unread
     </div>
     <h2>Deliberate Practice based on reading</h2>
     <div class="mermaid">
